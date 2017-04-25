@@ -1,0 +1,10 @@
+//RIGHT JOIN
+
+SELECT pgadd.pgname, pg_facility.cleanliness, pg_facility.water, pg_facility.refrigerator, pg_facility.mess, pg_facility.geyser, pg_facility.parking, pg_facility.laundary, pg_facility.power_backup, pg_facility.security_person
+FROM pgadd
+RIGHT JOIN pg_facility ON pgadd.pg_id = pg_facility.pg_id
+
+//LEFT JOIN
+SELECT pg_facility.cleanliness, pg_facility.water, pg_facility.refrigerator, pg_facility.mess, pg_facility.geyser, pg_facility.parking, pg_facility.laundary, pg_facility.power_backup, pg_facility.security_person, pgadd.pgname
+FROM pg_facility
+LEFT JOIN pgadd ON pg_facility.pg_id = pgadd.pg_id
