@@ -52,8 +52,10 @@
             <div class="col-3">
                 <select class="mdb-select colorful-select dropdown-success">
                     <option vlaue="" selected>Select Option</option>
-                    <option value="0">Yes</option>
-                    <option value="1">No</option>
+                    <option value="1">Boys</option>
+                    <option value="2">Girls</option>
+                    <option value="3">Couples</option>
+                    <option value="4">Family</option>
                 </select>
             </div>
         </div></br>
@@ -124,6 +126,19 @@
                     <option value="0">Yes</option>
                     <option value="1">No</option>
                 </select>
+            </div>
+        </div><br><br>
+        <div class="md-form row">
+            <div class="col">
+                <div class="file-field">
+                    <div class="btn btn-primary btn-sm">
+                        <span>Choose file</span>
+                        <input type="file" name="photo1">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="PG Room Image Upload">
+                    </div>
+                </div>
             </div>
         </div></br>
         <button class="btn btn-success btn-rounded" value="Save" name="facilityadd">Save</button>
