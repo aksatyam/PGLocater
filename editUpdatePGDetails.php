@@ -95,6 +95,14 @@
     </script>
     </head>
 <body>
+<div class="card">
+    <div class="card-block">
+        <!--Header-->
+        <div class="form-header blue-gradient">
+            <h3><i class="fa fa-list"></i> ALTER PG DETAILS</h3>
+        </div>
+	</div>
+</div>
 	<div id='list'>				
 		<?php
 			include 'connection.php';
@@ -108,14 +116,14 @@
 				    <input type='text' class='form-control' value='".$row[1]."'size='10'>
 				    <input type='text' class='form-control' value='".$row[2]."'size='20'>
 				    <input type='text' class='form-control' value='".$row[3]."'size='5'>
-                    <input type='text' class='form-control' value='".$row[4]."'size='5'>
+                    <input type='text' class='form-control' value='".$row[4]."'size='6'>
                     <input type='tel' class='form-control' value='".$row[5]."'size='6'>
                     <input type='tel' class='form-control' value='".$row[6]."'size='10'>
                     <input type='tel' class='form-control' value='".$row[7]."'size='10'>
                     <button type='button' class='btn btn-info btn-md'>EDIT</button>
                     <button type='button' class='btn btn-primary btn-md'>Update</button>
                     <button type='button' class='btn btn-danger btn-md'>DELETE</button>";
-                    echo "</form>";
+                    echo "</form><hr>";
                 }
 			} 
 			mysqli_close($conn);

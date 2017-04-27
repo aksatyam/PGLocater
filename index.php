@@ -19,6 +19,7 @@
     <link href="css/half-slider.css" rel="stylesheet">
     <link rel="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
  
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,6 +48,9 @@
 .nav-pills>li[data-slide-to="1"].active a { background-color: #e67e22; }
 .nav-pills>li[data-slide-to="2"].active a { background-color: #2980b9; }
 .nav-pills>li[data-slide-to="3"].active a { background-color: #8e44ad; }
+h3{
+    color:black;
+}
     </style>
 
 </head>
@@ -70,6 +74,12 @@
             <!--<img style="max-width:10%; margin-top: -15px;" src="t1.jpg">-->
             <img src="logoPG.png" width="150" height="30" class="d-inline-block align-top" alt="">
          </a>
+        <div class="navbar-form navbar-left">
+            <div class="form-group" ng-app="myapp" ng-controller="myctrl">
+                <input type="search" class="form-control col-sm-offset-5" placeholder="Search ......" size="70" ng-model="search">
+            </div>
+            </div>
+        </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -130,18 +140,10 @@
       </ul>
         </li>
       </ul>
-                <div class="navbar-form navbar-right">
-            <div class="form-group">
-                <input type="search" class="form-control" placeholder="Search" size="30">
-            </div>
-                <button type="button" class="btn btn-default">Submit</button>
-            </div>
-        </div>
       <ul class="nav navbar-nav navbar-right">
         <a class="navbar-brand active" href="index.php"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
         <li><a href="#about">About Us</a></li>
         <li><a href="#contact">Contact Us</a></li>
-
        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -331,65 +333,41 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item active">
-                <img src="http://placehold.it/1200x400/16a085/ffffff&text=About Us">
+            <div class="item  active">
+                <img src="location5.png">
                 <div class="carousel-caption">
-                    <h3>
-                        Headline</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
-                        ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                    
                 </div>
             </div>
             <!-- End Item -->
             <div class="item">
-                <img src="http://placehold.it/1200x400/e67e22/ffffff&text=Projects">
+                <img src="location.png">
                 <div class="carousel-caption">
-                    <h3>
-                        Headline</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
-                        ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                    
                 </div>
             </div>
             <!-- End Item -->
             <div class="item">
-                <img src="http://placehold.it/1200x400/2980b9/ffffff&text=Portfolio">
+                <img src="location2.png">
                 <div class="carousel-caption">
-                    <h3>
-                        Headline</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
-                        ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                    
                 </div>
             </div>
             <!-- End Item -->
             <div class="item">
-                <img src="http://placehold.it/1200x400/8e44ad/ffffff&text=Services">
+                <img src="location3.jpg">
                 <div class="carousel-caption">
-                    <h3>
-                        Headline</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
-                        ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                    
                 </div>
             </div>
             <!-- End Item -->
         </div>
         <!-- End Carousel Inner -->
         <ul class="nav nav-pills nav-justified">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">About<small>Lorem
-                ipsum dolor sit</small></a></li>
-            <li data-target="#myCarousel" data-slide-to="1"><a href="#">Projects<small>Lorem ipsum
-                dolor sit</small></a></li>
-            <li data-target="#myCarousel" data-slide-to="2"><a href="#">Portfolio<small>Lorem ipsum
-                dolor sit</small></a></li>
-            <li data-target="#myCarousel" data-slide-to="3"><a href="#">Services<small>Lorem ipsum
-                dolor sit</small></a></li>
+            <li data-target="#myCarousel" data-slide-to="3"  class="active"><a href="#">PG BUILDING</a></li>
+            <li data-target="#myCarousel" data-slide-to="0"><a href="#">Royal PG</a></li>
+            <li data-target="#myCarousel" data-slide-to="1"><a href="#">Ashiana PG</a></li>
+            <li data-target="#myCarousel" data-slide-to="2"><a href="#">Rooms</a></li>  
         </ul>
     </div>
     <!-- End Carousel -->
@@ -402,22 +380,11 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1>Half Slider by Start Bootstrap</h1>
-                <p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the <code>half-slider.css</code>file.</p>
+                <h1>PG IMAGES</h1>
             </div>
         </div>
 
         <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
 
     </div>
     <!-- /.container -->

@@ -1,37 +1,32 @@
 <?php
+    include('connection.php');
        /*-------------update part----------------------*/
     if(isset($_REQUEST["update"])){
         $q = json_decode($_REQUEST["update"]);
-        $hint="";
-        if(!$conn){
-		  die("Connection failed: " . mysqli_connect_error());
-	   }
-        else{
-            $query = "SELECT category_name FROM category WHERE category_name = '$q[1]'";
-            if (empty($q))
-            exit();
-            if($query){
-                $result=mysqli_query($conn,$query);
-			     if (mysqli_num_rows($result) > 0) {
-			         mysqli_close($conn);}
-                else{
-                    $query = "UPDATE category SET category_name = '$q[1]' WHERE category_id='$q[0]'";
-                    mysqli_query($conn,$query);
-                    $hint="Updation Success";
-                } 
-            }
-        }
-        echo $hint === "" ? "No changes made" : $hint;
+        $sql = "UPDATE pgadd SET pgname='$q[1]', pgaddress='$q[2]', city='$q[3]', state='$q[4]', pin='$q[5]', contact1='$q[6]', contact2='$q[7]' 
+        WHERE pg_id='$q[0]'";
+        if (mysqli_query($conn, $sql)) 
+        {
+            echo "PG Details  Updated Successfully.....";
+        }    
     }
 
 
-          /*-------------delete part----------------------*/
-	include "dbconnection.php";	                      
+          /*-------------delete part----------------------*/	                      
     if(isset($_REQUEST["delete"])){
 	   $q = json_decode($_REQUEST["delete"]);
-	   $query="DELETE FROM category WHERE category_id='$q'";
-        mysqli_query($conn,$query);
-	   $hint="DELETE.....Success";
-	   echo $hint === "" ? "no suggestion" : $hint;
+       $sql="SELECT pg_id FROM pg_facility WHERE pg_id='$q'";
+       if (mysqli_query($conn, $sql)) 
+        {
+            $query1="DELETE FROM pg_facility WHERE pg_id='$q'";
+            mysqli_query($conn, $query1);
+            
+            $query2="DELETE FROM pgadd WHERE pg_id='$q'";
+            mysqli_query($conn, $query2);
+            mysqli_close($conn);
+            echo "PG Details Delete Successfully.....";
+            
+        } 
+	   
     }
 ?>
