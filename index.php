@@ -20,6 +20,8 @@
     <link rel="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
  
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,6 +53,29 @@
 h3{
     color:black;
 }
+fieldset 
+	{
+		border: 1px solid #ddd !important;
+		margin: 0;
+		xmin-width: 0;
+		padding: 10px;       
+		position: relative;
+		border-radius:4px;
+		background-color:#f5f5f5;
+		padding-left:10px!important;
+	}	
+	
+		legend
+		{
+			font-size:14px;
+			font-weight:bold;
+			margin-bottom: 0px; 
+			width: 35%; 
+			border: 1px solid #ddd;
+			border-radius: 4px; 
+			padding: 5px 5px 5px 10px; 
+			background-color: #ffffff;
+		}
     </style>
 
 </head>
@@ -75,8 +100,11 @@ h3{
             <img src="logoPG.png" width="150" height="30" class="d-inline-block align-top" alt="">
          </a>
         <div class="navbar-form navbar-left">
-            <div class="form-group" ng-app="myapp" ng-controller="myctrl">
-                <input type="search" class="form-control col-sm-offset-5" placeholder="Search ......" size="70" ng-model="search">
+            <div class="form-group">
+                    <div class="input-group">
+					    <span class="input-group-addon">Search</span>
+					    <input type="text" name="search_text" id="search_text" placeholder="Search by PG Details" class="form-control" />
+				    </div>
             </div>
             </div>
         </div>
@@ -330,6 +358,47 @@ h3{
     <!-- Half Page Image Background Carousel Header -->
   <!--  <header id="myCarousel" class="carousel slide">-->
        <div class="container">
+            <fieldset class="col">    	
+					<legend>Serach Results</legend>
+					
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div id="result">
+                            </div>
+						</div>
+					</div>
+					
+				</fieldset>	
+        <script>
+                    $(document).ready(function(){
+
+                    load_data();
+
+                    function load_data(query)
+                    {
+                    $.ajax({
+                    url:"fetch.php",
+                    method:"POST",
+                    data:{query:query},
+                    success:function(data)
+                    {
+                        $('#result').html(data);
+                    }
+                    });
+                    }
+                    $('#search_text').keyup(function(){
+                    var search = $(this).val();
+                    if(search != '')
+                    {
+                    load_data(search);
+                    }
+                    else
+                    {
+                    load_data();
+                    }
+                    });
+                    });
+        </script>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
