@@ -1,14 +1,37 @@
 <html lang="en">
     <head>
+        <style>
+            fieldset 
+            {
+                border: 1px solid #ddd !important;
+                margin: 0;
+                xmin-width: 0;
+                padding: 10px;       
+                position: relative;
+                border-radius:4px;
+                background-color:#f5f5f5;
+                padding-left:10px!important;
+            }	
+            
+                legend
+                {
+                    font-size:14px;
+                    font-weight:bold;
+                    margin-bottom: 0px; 
+                    width: 35%; 
+                    border: 1px solid #ddd;
+                    border-radius: 4px; 
+                    padding: 5px 5px 5px 10px; 
+                    background-color: #ffffff;
+                }
+    </style>
     </head>
 <body>
 <div class="container">
-        <div class="card">
-            <div class="card-block">
-                <!--Header-->
-                <div class="form-header blue-gradient">
-                    <h3><i class="fa fa-list"></i> PG ROOM FACILTY ADD</h3>
-                </div><br>
+  <fieldset class="col">    	
+	<legend>ADD PG ROOM FACILITY DETAILS</legend>
+			<div class="panel panel-default">
+				<div class="panel-body" style="padding:10px">
 
         <!--PG LIST POPULATE START-->
         <div class="row">
@@ -144,8 +167,9 @@
         <button class="btn btn-success btn-rounded" value="Save" name="facilityadd">Save</button>
         </div>
         <!--ADD PG FACILITY FORM END-->
-    </div>
-  </div><br>
+        </div>
+    </div><br>
+  </fieldset>
 </div>
 <script>
     // Material Select Initialization

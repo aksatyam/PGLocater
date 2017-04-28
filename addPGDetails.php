@@ -1,5 +1,31 @@
 <html lang="en">
     <head>
+    <style>
+    fieldset 
+	{
+		border: 1px solid #ddd !important;
+		margin: 0;
+		xmin-width: 0;
+		padding: 10px;       
+		position: relative;
+		border-radius:4px;
+		background-color:#f5f5f5;
+		padding-left:10px!important;
+	}	
+	
+		legend
+		{
+			font-size:14px;
+			font-weight:bold;
+			margin-bottom: 0px; 
+			width: 35%; 
+			border: 1px solid #ddd;
+			border-radius: 4px; 
+			padding: 5px 5px 5px 10px; 
+			background-color: #ffffff;
+		}
+    </style>
+    
 
 <?php 
 include('connection.php');
@@ -73,112 +99,110 @@ if(isset($_POST['addpgsub'])){
 <body>
     <!--Form with header-->
 <div class="row-6">
-<div class="card">
-    <div class="card-block">
-        <!--Header-->
-        <div class="form-header blue-gradient">
-            <h3><i class="fa fa-address-card-o" aria-hidden="true"></i> ADD PG DETAILS</h3>
-        </div>
+<fieldset class="col">    	
+	<legend>ADD PG DETAILS</legend>
+			<div class="panel panel-default">
+				<div class="panel-body">
         
     <div class="col-sm-10">
-        <!--Body-->
-        <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
-            <div class="md-form form-group">
-                <i class="fa fa-home prefix"></i>
-                <input type="text" class="form-control" name="pgname">
-                <label for="form9" data-error="wrong" data-success="right">PG Name</label>
-            </div>
+                        <!--Body-->
+                        <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+                            <div class="md-form form-group">
+                                <i class="fa fa-home prefix"></i>
+                                <input type="text" class="form-control" name="pgname">
+                                <label for="form9" data-error="wrong" data-success="right">PG Name</label>
+                            </div>
 
-            <div class="md-form form-group">
-                <i class="fa fa-address-book prefix"></i>
-                <input type="text"  class="form-control" name="pgaddress">
-                <label  data-error="wrong" data-success="right">PG Addrerss</label>
-            </div>
+                            <div class="md-form form-group">
+                                <i class="fa fa-address-book prefix"></i>
+                                <input type="text"  class="form-control" name="pgaddress">
+                                <label  data-error="wrong" data-success="right">PG Addrerss</label>
+                            </div>
 
-            <div class="md-form form-group">
-                <i class="fa fa-location-arrow prefix"></i>
-                <input type="text"  class="form-control" name="city">
-                <label  data-error="wrong" data-success="right">City</label>
-            </div>
+                            <div class="md-form form-group">
+                                <i class="fa fa-location-arrow prefix"></i>
+                                <input type="text"  class="form-control" name="city">
+                                <label  data-error="wrong" data-success="right">City</label>
+                            </div>
 
-            <div class="md-form form-group">
-                <i class="fa fa-area-chart prefix"></i>
-                <input type="text"  class="form-control" name="state">
-                <label  data-error="wrong" data-success="right">State</label>
-            </div>
+                            <div class="md-form form-group">
+                                <i class="fa fa-area-chart prefix"></i>
+                                <input type="text"  class="form-control" name="state">
+                                <label  data-error="wrong" data-success="right">State</label>
+                            </div>
 
-            <div class="md-form form-group">
-                <i class="fa fa-area-chart prefix"></i>
-                <input type="tel" class="form-control" name="pin">
-                <label  data-error="wrong" data-success="right">PIN</label>
-            </div>
+                            <div class="md-form form-group">
+                                <i class="fa fa-area-chart prefix"></i>
+                                <input type="tel" class="form-control" name="pin">
+                                <label  data-error="wrong" data-success="right">PIN</label>
+                            </div>
 
-            <div class="md-form form-group">
-                <i class="fa fa-mobile-phone prefix"></i>
-                <input type="tel"  class="form-control" name="contact1">
-                <label data-error="wrong" data-success="right">Contact No 1</label>
-            </div>
+                            <div class="md-form form-group">
+                                <i class="fa fa-mobile-phone prefix"></i>
+                                <input type="tel"  class="form-control" name="contact1">
+                                <label data-error="wrong" data-success="right">Contact No 1</label>
+                            </div>
 
-            <div class="md-form form-group">
-                <i class="fa fa-mobile-phone prefix"></i>
-                <input type="tel" class="form-control" name="contact2">
-                <label  data-error="wrong" data-success="right">Contact No 2</label>
-            </div>
+                            <div class="md-form form-group">
+                                <i class="fa fa-mobile-phone prefix"></i>
+                                <input type="tel" class="form-control" name="contact2">
+                                <label  data-error="wrong" data-success="right">Contact No 2</label>
+                            </div>
 
-            <div class="form-group">
-                <i class="fa fa-female prefix"></i>
-                <label  data-error="wrong" data-success="right">Suitable For</label>
-                <select  class="form-control" name="suitable">
-                    <option value="" selected disabled>Select suitable for</option>
-                    <option value="Boys">Boys</option>
-                    <option value="girls">Girls</option>
-                    <option value="combine">Combine</option>
-                    <option value="family">Family</option>
-                    </select>
-                
-            </div>
+                            <div class="form-group">
+                                <i class="fa fa-female prefix"></i>
+                                <label  data-error="wrong" data-success="right">Suitable For</label>
+                                <select  class="form-control" name="suitable">
+                                    <option value="" selected disabled>Select suitable for</option>
+                                    <option value="Boys">Boys</option>
+                                    <option value="girls">Girls</option>
+                                    <option value="combine">Combine</option>
+                                    <option value="family">Family</option>
+                                    </select>
+                                
+                            </div>
 
-            <div class="file-field">
-                    <div class="btn btn-primary btn-sm">
-                        <span>Choose file</span>
-                        <input type="file" name="photo1">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="PG Image1 Upload">
-                    </div>
-            </div>
-            <br><br>
-            <div class="file-field">
-                    <div class="btn btn-primary btn-sm">
-                        <span>Choose file</span>
-                        <input type="file" name="photo2">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="PG Image2 Upload">
-                    </div>
-            </div>
-            <br><br>
-            <div class="file-field">
-                    <div class="btn btn-primary btn-sm">
-                        <span>Choose file</span>
-                        <input type="file" name="photo3">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="PG Image3 Upload">
-                    </div>
-            </div>
+                            <div class="file-field">
+                                    <div class="btn btn-primary btn-sm">
+                                        <span>Choose file</span>
+                                        <input type="file" name="photo1">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="PG Image1 Upload">
+                                    </div>
+                            </div>
+                            <br><br>
+                            <div class="file-field">
+                                    <div class="btn btn-primary btn-sm">
+                                        <span>Choose file</span>
+                                        <input type="file" name="photo2">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="PG Image2 Upload">
+                                    </div>
+                            </div>
+                            <br><br>
+                            <div class="file-field">
+                                    <div class="btn btn-primary btn-sm">
+                                        <span>Choose file</span>
+                                        <input type="file" name="photo3">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="PG Image3 Upload">
+                                    </div>
+                            </div>
 
-            <br><br>
-            <div class="md-form form-group">
-                <button class="btn btn-success btn-lg btn-rounded" type="submit" name="addpgsub"><i class="fa  fa-save left"></i> SAVE</button>
-                <button class="btn btn-danger btn-lg btn-rounded" type="reset"><i class="fa fa-calendar-times-o left"></i> CLEAR</button>
+                            <br><br>
+                            <div class="md-form form-group">
+                                <button class="btn btn-success btn-lg btn-rounded" type="submit" name="addpgsub"><i class="fa  fa-save left"></i> SAVE</button>
+                                <button class="btn btn-danger btn-lg btn-rounded" type="reset"><i class="fa fa-calendar-times-o left"></i> CLEAR</button>
+                            </div>
+                    </form>
+                </div>
             </div>
-       </form>
-    </div>
-    </div>
+        </div>   
+    </fieldset>	
 </div>
-</div>
-<!--/Form with header-->
 </body>
 <script>
      $(document).ready(function(){

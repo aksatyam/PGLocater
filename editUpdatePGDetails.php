@@ -1,5 +1,30 @@
 <html lang="en">
     <head>
+    <style>
+    fieldset 
+	{
+		border: 1px solid #ddd !important;
+		margin: 0;
+		xmin-width: 0;
+		padding: 10px;       
+		position: relative;
+		border-radius:4px;
+		background-color:#f5f5f5;
+		padding-left:10px!important;
+	}	
+	
+		legend
+		{
+			font-size:14px;
+			font-weight:bold;
+			margin-bottom: 0px; 
+			width: 35%; 
+			border: 1px solid #ddd;
+			border-radius: 4px; 
+			padding: 5px 5px 5px 10px; 
+			background-color: #ffffff;
+		}
+    </style>
      <script>
         $(document).ready(function(){
 			var list_form= $('#list form');
@@ -95,39 +120,41 @@
     </script>
     </head>
 <body>
-<div class="card">
-    <div class="card-block">
-        <!--Header-->
-        <div class="form-header blue-gradient">
-            <h3><i class="fa fa-list"></i> ALTER PG DETAILS</h3>
+<fieldset class="col">    	
+					<legend>ALTER PG DETAILS</legend>
+					
+					<div class="panel panel-default">
+						<div class="panel-body">
+							
+						
+	                    <div id='list'>				
+                                <?php
+                                    include 'connection.php';
+                                    include 'ownersessioncheck.php';
+                                    $query="SELECT pg_id,pgname,pgaddress,city,state,pin,contact1,contact2 FROM pgadd";
+                                    $sql=mysqli_query($conn,$query);
+                                    if(mysqli_num_rows($sql) > 0) {
+                                        while($row = mysqli_fetch_array($sql)) {
+                                            echo "<form class='form-inline'>
+                                            <input type='hidden' class='form-control' value='".$row[0]."'>
+                                            <input type='text' class='form-control' value='".$row[1]."'size='10'>
+                                            <input type='text' class='form-control' value='".$row[2]."'size='20'>
+                                            <input type='text' class='form-control' value='".$row[3]."'size='5'>
+                                            <input type='text' class='form-control' value='".$row[4]."'size='6'>
+                                            <input type='tel' class='form-control' value='".$row[5]."'size='6'>
+                                            <input type='tel' class='form-control' value='".$row[6]."'size='10'>
+                                            <input type='tel' class='form-control' value='".$row[7]."'size='10'>
+                                            <button type='button' class='btn btn-info btn-md'>EDIT</button>
+                                            <button type='button' class='btn btn-primary btn-md'>Update</button>
+                                            <button type='button' class='btn btn-danger btn-md'>DELETE</button>";
+                                            echo "</form>";
+                                        }
+                                    } 
+                                    mysqli_close($conn);
+                                ?>
+	                </div>
+            </div>
         </div>
-	</div>
-</div>
-	<div id='list'>				
-		<?php
-			include 'connection.php';
-            include 'ownersessioncheck.php';
-            $query="SELECT pg_id,pgname,pgaddress,city,state,pin,contact1,contact2 FROM pgadd";
-            $sql=mysqli_query($conn,$query);
-			if(mysqli_num_rows($sql) > 0) {
-			    while($row = mysqli_fetch_array($sql)) {
-				    echo "<form class='form-inline'>
-				    <input type='hidden' class='form-control' value='".$row[0]."'>
-				    <input type='text' class='form-control' value='".$row[1]."'size='10'>
-				    <input type='text' class='form-control' value='".$row[2]."'size='20'>
-				    <input type='text' class='form-control' value='".$row[3]."'size='5'>
-                    <input type='text' class='form-control' value='".$row[4]."'size='6'>
-                    <input type='tel' class='form-control' value='".$row[5]."'size='6'>
-                    <input type='tel' class='form-control' value='".$row[6]."'size='10'>
-                    <input type='tel' class='form-control' value='".$row[7]."'size='10'>
-                    <button type='button' class='btn btn-info btn-md'>EDIT</button>
-                    <button type='button' class='btn btn-primary btn-md'>Update</button>
-                    <button type='button' class='btn btn-danger btn-md'>DELETE</button>";
-                    echo "</form><hr>";
-                }
-			} 
-			mysqli_close($conn);
-		?>
-	</div>
+</fieldset>	
 </body>
 </html>
