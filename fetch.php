@@ -31,8 +31,7 @@ if (mysqli_num_rows($result) > 0) {
      <th>State Code</th>
      <th>Pin</th>
      <th>Contact No</th>
-    </tr>
- ';
+    </tr>';
     while ($row = mysqli_fetch_array($result)) {
         $output .= '
    <tr>
@@ -42,8 +41,7 @@ if (mysqli_num_rows($result) > 0) {
     <td>' . $row["state"] . '</td>
     <td>' . $row["pin"] . '</td>
     <td>' . $row["contact1"] . '</td>
-   </tr>
-  ';
+   </tr>';
     }
     echo $output;
 } else {

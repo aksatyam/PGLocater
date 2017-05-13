@@ -112,20 +112,6 @@
     <!--Main layout-->
     <main>
 <div class="container">
-            <!--Card-->
-<!--<div class="card-overlay" style="background-image: url('https://mdbootstrap.com/img/Photos/Exposure/Dark/courses.jpg')">-->
-
-    <!--Content-->
-    <!--<div class="white-text text-center">
-        <div class="card-block">
-            <h5 class="teal-text"><i class="fa fa-institution"></i> Lovely Professional University</h5>
-            <h3>PG LOCATER</h3>
-            <p>Popular Locations ... PG & Hostels ... Quick Tips to Find Right Paying Guest Accommodation… </p>
-            <a class="btn btn-lg btn-white-outline"><i class="fa fa-clone left"></i> View project</a>
-        </div>
-    </div>
-</div>-->
-<!--/.Card-->
             <br><br>
                 <div id="DisplayDiv">
                     <!-- This is where test.php should be inserted -->
@@ -190,12 +176,6 @@
                                     <input type="password" id="form92" class="form-control validate">
                                     <label for="form92" data-error="wrong" data-success="right">Type New password</label>
                                 </div>
-                                 <div class="md-form form-group">
-                                    <i class="fa fa-lock prefix"></i>
-                                    <input type="password" id="form92" class="form-control validate">
-                                    <label for="form92" data-error="wrong" data-success="right">Type Confirm New password</label>
-                                </div>
-
                                 <div class="md-form form-group">
                                     <a href="" class="btn btn-primary btn-lg">CHANGE</a>
                                 </div>
@@ -214,12 +194,6 @@
                                     <input type="email" id="form91" class="form-control">
                                     <label for="form9">Type Your New Mob No</label>
                                 </div>
-                                <div class="md-form form-group">
-                                    <i class="fa fa-lock prefix"></i>
-                                    <input type="password" id="form91" class="form-control validate">
-                                    <label for="form92" data-error="wrong" data-success="right">Enter Password to change mobile number</label>
-                                </div>
-
                                 <div class="md-form form-group">
                                     <a href="" class="btn btn-primary btn-lg">CHANGE</a>
                                 </div>

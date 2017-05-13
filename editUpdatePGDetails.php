@@ -18,7 +18,8 @@
 			font-size:14px;
 			font-weight:bold;
 			margin-bottom: 0px; 
-			width: 35%; 
+			width: 100%; 
+            text-align: center;
 			border: 1px solid #ddd;
 			border-radius: 4px; 
 			padding: 5px 5px 5px 10px; 
